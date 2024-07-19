@@ -1,0 +1,39 @@
+.contactItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+        
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.contactName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.contactNumber {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.contactInfo {
+    margin-right: 30px;
+}
+
+.contactBtn {
+    background-color: crimson;
+    color: white;
+}
+
+.contactBtn:hover {
+    background-color: white;
+    color: crimson;
+}
