@@ -1,22 +1,20 @@
 import { useDispatch, useSelector } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 import Contact from "../contact/Contact";
 import css from "./contactlist.module.css";
 
 const ContactList = () => {
   const contacts = useSelector((state) => state.contacts.items);
-  const filter = useSelector((state) => state.filters.name);
+  const selectNameFilter = useSelector((state) => state.filters.name);
   const dispatch = useDispatch();
 
   const handleDelete = (id) => {
     const updatedContacts = contacts.filter((contact) => contact.id !== id);
-    dispatch({
-      type: "contact/delete",
-      payload: updatedContacts,
-    });
+    dispatch(deleteContact(updatedContacts));
   };
 
   const contactsToList = contacts.filter((contact) =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
+    contact.name.toLowerCase().includes(selectNameFilter.toLowerCase())
   );
 
   return (
